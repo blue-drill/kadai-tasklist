@@ -43,14 +43,14 @@ class TasksController < ApplicationController
     flash[:success] = 'タスクを削除しました'
     redirect_to tasks_url
   end
-end
-
-private
-
-def set_task
-  @task = current_user.tasks.find_by(id: params[:id])
-end
-
-def task_params
-  params.require(:task).permit(:content, :status)
+  
+  private
+  
+  def set_task
+    @task = current_user.tasks.find_by(id: params[:id])
+  end
+  
+  def task_params
+    params.require(:task).permit(:content, :status)
+  end
 end
