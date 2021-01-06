@@ -15,12 +15,6 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
-  def destroy
-    @user = current_user.destroy
-    flash[:success] = '退会しました'
-    redirect_to root_path
-  end
   
   private
   
